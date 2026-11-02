@@ -45,3 +45,24 @@ summary .disclosure-cue{display:block;width:auto;height:auto;background:transpar
 .intro .intro-profile{display:block}.portrait{margin:0}
 .secondary h2{font-size:42px;font-weight:400}
 @media(max-width:700px){.intro{padding-top:38px;padding-bottom:34px;grid-template-columns:minmax(0,1fr) 116px;gap:24px;align-items:start}.intro>div{grid-column:1/-1;grid-row:1}.intro .intro-profile{grid-column:2;grid-row:1;width:116px;margin-top:4px}.intro>div>.eyebrow,.intro>div>h1{margin-right:132px}.intro h1{font-size:32px;line-height:1.12;letter-spacing:-1px}.intro h1 br{display:none}.intro .lede{margin-top:26px}.intro-current{gap:14px;font-size:11px}.secondary h2{font-size:34px}}
+
+/* A single introduction and consistent reading styles inside project disclosures. */
+.intro{padding-top:72px;padding-bottom:52px;align-items:center}
+.intro h1{font-size:clamp(48px,5.5vw,76px);letter-spacing:-2px;line-height:1.05;margin:0}
+.intro-role{font-size:16px;color:var(--muted);margin:17px 0 0}
+.intro .lede{font-size:17px;line-height:1.75;margin-top:25px}
+.app-section{gap:44px;padding:34px 0;align-items:start}
+.app-section h3,.app-foundation>h3,.engineering-deep h3,.detail-body h3{font-size:26px;line-height:1.2;letter-spacing:-.5px;margin:0 0 16px}
+.app-section-copy>p,.engineering-deep p,.detail-body p,details>p,.app-foundation>p{font-size:15px;line-height:1.75;color:var(--ink)}
+.detail-label{font:600 14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:24px 0 8px;color:var(--ink)}
+.engineering-note{margin-top:0;color:var(--ink)}
+.detail-body{display:block;max-width:800px;padding:24px 0 12px}.detail-body>div+div{margin-top:28px}
+.engineering-deep{max-width:800px}.engineering-deep section{padding:24px 0 8px}
+.system-core{gap:8px 24px}.system-core strong{font-size:15px}.system-core span{font-size:14px}
+.system-branches{gap:24px}.system-branches h4{font-size:14px;color:var(--ink)}.system-branches p,.system-branches span{font-size:14px;line-height:1.7}.architecture-reasons p{font-size:15px;line-height:1.75}
+.architecture .small-label{font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.app-section-nav{font-size:14px}.section-photos figcaption{font-size:13px;line-height:1.6}
+summary .disclosure-title{font-size:16px}.service strong{font-size:14px}.service small{font-size:12px}
+@media(max-width:700px){.intro{padding-top:48px;padding-bottom:34px;gap:20px}.intro h1{font-size:42px;letter-spacing:-1.3px;margin-right:132px}.intro-role{font-size:13px;margin-right:132px;line-height:1.6}.intro .lede{font-size:16px;margin-top:25px}.app-section h3,.app-foundation>h3,.engineering-deep h3,.detail-body h3{font-size:25px}.app-section{grid-template-columns:1fr;gap:22px}.system-branches{grid-template-columns:1fr}.system-branches h4{margin-bottom:7px}.architecture-reasons{grid-template-columns:1fr;gap:0}.service strong{font-size:13px}.service small{font-size:12px}}
+
+@media(max-width:700px){.intro{grid-template-columns:minmax(0,1fr) 116px;gap:12px 22px;align-items:start}.intro>div{display:contents}.intro h1{grid-column:1;grid-row:1;margin:0!important;font-size:40px}.intro-role{grid-column:1;grid-row:2;margin:0;font-size:13px}.intro .intro-profile{grid-column:2;grid-row:1 / span 2;margin:0;width:116px}.intro .lede{grid-column:1/-1;grid-row:3;margin-top:14px}}
