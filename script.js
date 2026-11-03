@@ -1,5 +1,5 @@
-const views={current:{src:'assets/website/current-homepage.png',alt:'Current Thresher homepage with lead story, crossword, and editors’ picks',caption:'October 2026 capture, following the redesign. Serif typography, an off-white background, and clear routes to stories and games.'},historical:{src:'assets/website/before-november-2024.png',alt:'The Rice Thresher homepage on November 15, 2024, before the redesign',caption:'Before the redesign · November 15, 2024. The previous homepage used a dense navigation bar and competing story layouts.'}};
-document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{const view=views[button.dataset.view];const image=document.querySelector('#website-image');image.src=view.src;image.alt=view.alt;document.querySelector('#website-caption').textContent=view.caption;document.querySelectorAll('[data-view]').forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});}));
+const views={current:{src:'assets/website/current-homepage.png',alt:'Current Thresher homepage with lead story, crossword, and editors’ picks',caption:'Current design, October 2026.'},historical:{src:'assets/website/before-november-2024.png',alt:'The Rice Thresher homepage on November 15, 2024, before the redesign',caption:'Before the redesign, November 15, 2024.'}};
+document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{const view=views[button.dataset.view];const image=document.querySelector('#website-image');image.src=view.src;image.alt=view.alt;document.querySelectorAll('.website-markers,.website-annotations').forEach(element=>{element.hidden=button.dataset.view!=='current';});document.querySelector('#website-caption').textContent=view.caption;document.querySelectorAll('[data-view]').forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});}));
 
 
 function revealSection(hash){
@@ -22,9 +22,9 @@ function setContentsOpen(open){
  contentsToggle.setAttribute('aria-label',open?'Hide contents':'Show contents');
  contentsSidebar.inert=!open;
 }
-setContentsOpen(!compactContents.matches);
+setContentsOpen(false);
 contentsToggle.addEventListener('click',()=>setContentsOpen(!document.body.classList.contains('contents-open')));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('contents-open')){setContentsOpen(false);contentsToggle.focus();}});
-compactContents.addEventListener('change',event=>setContentsOpen(!event.matches));
+compactContents.addEventListener('change',event=>{if(event.matches)setContentsOpen(false);});
 document.querySelectorAll('.contents-sidebar a').forEach(link=>link.addEventListener('click',()=>{if(compactContents.matches){setContentsOpen(false);const target=document.getElementById(link.hash.slice(1));if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}}}));
 document.querySelector('.page').addEventListener('click',()=>{if(compactContents.matches)setContentsOpen(false);});
